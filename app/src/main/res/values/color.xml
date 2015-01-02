@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue">#0000FF</color>
+    <color name="black">#000000</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="burlyWood">#DEB887</color>
+    <color name="darkBlue">#00008B</color>
+    <color name="darkCyan">#008B8B</color>
+    <color name="grayTwentyEight">#474747</color>
+    <color name="grayNineteen">#303030</color>
+    <color name="graySeventeen">#2B2B2B</color>
+    <color name="ivory">#FFFFF0</color>
+    <color name="turquoise">#40E0D0</color>
+    <color name="tab_indicator">#40E0D0</color>
+    <color name="skyblue">#87CEFF</color>
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <color name="view_divider_color">#BABABA</color>
+    <color name="view_divider_color_2">#DADADA</color>
+    <color name="list_divider">#d9d9d9</color>
+    <color name="list_row_start_color">#ffffff</color>
+    <color name="list_row_end_color">#ffffff</color>
+    <color name="list_row_hover_start_color">#ebeef0</color>
+    <color name="list_row_hover_end_color">#ebeef0</color>
+    <color name="text_color_default">#00000C</color>
+    <color name="text_color_inverse">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
+    <color name="list_row_default_bg">#ffffff</color>
+    <color name="list_row_pressed_bg">#008cef</color>
+    <color name="list_row_selected_bg">#86d3f6</color>
+
+</resources>
