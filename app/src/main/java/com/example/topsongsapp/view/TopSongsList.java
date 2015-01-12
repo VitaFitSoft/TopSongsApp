@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -18,7 +19,6 @@ import com.example.topsongsapp.adapter.SongsAdapter;
 import com.example.topsongsapp.io.LoadListItems;
 import com.example.topsongsapp.model.Songs;
 import com.example.topsongsapp.utils.SongImage;
-
 import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -36,6 +36,8 @@ public class TopSongsList extends LoadListItems {
     private int mSongId;
 	private SharedPreferences settings = null;
 	private static final String SAVED_NAME = "TopSongsList";
+    private static Handler handler;
+    private Thread downloadThread;
 
     private FragmentActivity activity;
 
@@ -51,47 +53,30 @@ public class TopSongsList extends LoadListItems {
       super.onActivityCreated(savedInstanceState);
       this.activity = getActivity();
 
-
-	    if(settings != null){
-		  getPreferences();
-        }else{
+	  if(settings != null){
+		getPreferences();
+      }else{
         mSongList = new ArrayList<>();
-        loadsongList();
+        showProgressDialog();
+        downloadThread = new DownLoadThread();
+        downloadThread.start();
       }
-    }// end onActivityCreated
 
-
-    private void loadsongList(){
-      final Handler mHandler = new Handler();
-      showProgressDialog();
-      new Thread(new Runnable() {
-        public void run() {
-          download();
-          mHandler.post(new Runnable() {
-                    public void run() {
-            mSongList = getSongList();
-            if(mSongList != null && !mSongList.isEmpty()) {
-              songsAdapter = new SongsAdapter(activity, mSongList);
-              setListAdapter(songsAdapter);
-                // Sort the list.
-               Collections.sort(mSongList, ALPHA_COMPARATOR);
-              songsAdapter.notifyDataSetChanged();
-              hideProgressDialog();
-            }
-          } // end runnable
-                }); //end mHandler
+      handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+          mSongList = getSongList();
+          if(mSongList != null && !mSongList.isEmpty()) {
+            songsAdapter = new SongsAdapter(activity, mSongList);
+            setListAdapter(songsAdapter);
+            // Sort the list.
+            Collections.sort(mSongList, ALPHA_COMPARATOR);
+            songsAdapter.notifyDataSetChanged();
+            hideProgressDialog();
+          }
         }
-        private void download() {
-          try{
-              connectAndDownLoad();
-              //---simulate doing some work---
-              Thread.sleep(4000); // for 4 second.
-             }catch(InterruptedException e) {
-                e.printStackTrace();
-             }
-        } // end of ticker method
-      }).start(); // end new thread
-    }
+      };
+    }// end onActivityCreated
 
     /**
      * Perform alphabetical comparison of application entry objects.
@@ -104,6 +89,19 @@ public class TopSongsList extends LoadListItems {
         }
     };
 
+    public class DownLoadThread extends Thread {
+      @Override
+      public void run() {
+        connectAndDownLoad();
+        try {
+              new Thread().sleep(5000);
+            }catch (InterruptedException e) {
+               e.printStackTrace();
+            }
+            // Updates the user interface
+        handler.sendEmptyMessage(0);
+      }
+    }
 
     /**
      * Called by PropertyList when a list item is selected

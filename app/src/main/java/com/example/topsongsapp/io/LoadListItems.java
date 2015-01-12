@@ -34,16 +34,9 @@ public class LoadListItems extends ListFragment implements TopSongInterface, Che
 
     private static List<Songs> songList;
     public static final String PREFS_NAME = "LoadListItems";
-//	private String tag_json_obj = "json_obj_req";
     public LoadListItems() {
 
     }
-
-  /*  @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        inflater.inflate(R.layout.activity_topsongs_container, container, false);
-        return super.onCreateView(inflater, container, savedInstanceState);
-    }*/
 
     public void connectAndDownLoad() {
         boolean isConnected = false;
@@ -110,8 +103,6 @@ public class LoadListItems extends ListFragment implements TopSongInterface, Che
 
                   // Adding request to request queue
                   AppController.getInstance().addToRequestQueue(jsonObjReq);
-         //         doFakeWork();
-
 
     }// end method getTopChartList
 
@@ -121,15 +112,6 @@ public class LoadListItems extends ListFragment implements TopSongInterface, Che
 
     public List<Songs> getSongList(){
         return songList;
-    }
-
-    // Simulating something timeconsuming
-    private void doFakeWork() {
-        try{
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     // customised toast.
