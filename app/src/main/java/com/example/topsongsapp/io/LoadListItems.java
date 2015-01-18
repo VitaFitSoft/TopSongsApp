@@ -6,7 +6,6 @@ import android.net.NetworkInfo;
 import com.example.topsongsapp.R;
 import com.example.topsongsapp.controller.AppController;
 import com.example.topsongsapp.handler.JsonHandler;
-import com.example.topsongsapp.topsongsinterface.CheckNetworkConnections;
 import com.example.topsongsapp.model.Songs;
 import com.example.topsongsapp.topsongsinterface.ShowMessage;
 import com.example.topsongsapp.topsongsinterface.TopSongInterface;
@@ -29,8 +28,7 @@ import org.json.JSONObject;
 import java.util.List;
 
 @SuppressWarnings("ALL")
-public class LoadListItems extends ListFragment implements TopSongInterface, CheckNetworkConnections,
-        ShowMessage{
+public class LoadListItems extends ListFragment implements TopSongInterface, ShowMessage{
 
     private static List<Songs> songList;
     public static final String PREFS_NAME = "LoadListItems";

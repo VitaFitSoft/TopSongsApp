@@ -32,8 +32,6 @@ public class  TransactionFragment extends Fragment implements TopSongInterface, 
 
     public List<Favourites> manageFavorites() {
         List<Favourites> fravArray = new ArrayList<>();
-        //  DataBaseHandler db = new DataBaseHandler(getActivity());
-
         try{
             dbh.openRead();
             fravArray = dbh.getAllSongs();

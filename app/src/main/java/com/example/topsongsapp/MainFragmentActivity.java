@@ -26,7 +26,6 @@ import com.example.topsongsapp.view.TopSongsList;
 
 public class MainFragmentActivity extends TransactionActivity implements TabConstants{
     private SongsFragmentTabHost mTabHost;
-    private TransactionFragment mTransactionFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +41,8 @@ public class MainFragmentActivity extends TransactionActivity implements TabCons
         }
 
         // Check to see if we have retained the worker fragment.
-        mTransactionFragment = (TransactionFragment)getSupportFragmentManager().findFragmentByTag("trans");
+        TransactionFragment mTransactionFragment =
+                (TransactionFragment)getSupportFragmentManager().findFragmentByTag("trans");
 
         // If not retained (or first time running), we need to create it.
         if(mTransactionFragment == null) {

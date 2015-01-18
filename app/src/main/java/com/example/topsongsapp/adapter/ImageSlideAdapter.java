@@ -30,7 +30,6 @@ public class ImageSlideAdapter extends PagerAdapter {
 	private final DisplayImageOptions options;
 	private final ImageLoadingListener imageListener;
     private static final String ARG_SINGLE_FAVOURITES ="singleFavourites";
-    // --Commented out by Inspection (01/01/15 15:42):public static final String PREFS_NAME = "ImageSlideAdapter";
 	private static FragmentActivity mActivity;
 	private final List<Favourites> favourites;
     private static ImageLoader imageLoader;

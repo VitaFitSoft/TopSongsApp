@@ -37,8 +37,6 @@ public class TopSongsList extends LoadListItems {
 	private SharedPreferences settings = null;
 	private static final String SAVED_NAME = "TopSongsList";
     private static Handler handler;
-    private Thread downloadThread;
-
     private FragmentActivity activity;
 
     @Override
@@ -58,7 +56,7 @@ public class TopSongsList extends LoadListItems {
       }else{
         mSongList = new ArrayList<>();
         showProgressDialog();
-        downloadThread = new DownLoadThread();
+        Thread downloadThread = new DownLoadThread();
         downloadThread.start();
       }
 

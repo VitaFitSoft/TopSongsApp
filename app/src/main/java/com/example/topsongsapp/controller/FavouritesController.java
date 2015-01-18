@@ -8,6 +8,7 @@ import java.util.List;
 import com.example.topsongsapp.R;
 import com.example.topsongsapp.adapter.ImageSlideAdapter;
 import com.example.topsongsapp.model.Favourites;
+import com.example.topsongsapp.topsongsinterface.TopSongInterface;
 import com.example.topsongsapp.utils.CirclePageIndicator;
 import com.example.topsongsapp.utils.PageIndicator;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -27,7 +28,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 @SuppressWarnings("ALL")
-public class FavouritesController extends Fragment {
+public class FavouritesController extends Fragment implements TopSongInterface {
     public OnLoadAdapterListener loadAdapterListener;
 
     public FavouritesController(){
@@ -56,7 +57,6 @@ public class FavouritesController extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -66,8 +66,8 @@ public class FavouritesController extends Fragment {
         findViewById(view);
 
         if (savedInstanceState != null) {
-            if (savedInstanceState.containsKey("PAGEPOSITION")) {
-                mPosition = savedInstanceState.getInt("PAGEPOSITION");
+            if (savedInstanceState.containsKey(ARG_PAGE_POSITION)) {
+                mPosition = savedInstanceState.getInt(ARG_PAGE_POSITION);
             }
         }
 
@@ -133,7 +133,6 @@ public class FavouritesController extends Fragment {
         });
     }
 
-
     public void runnable(final int size) {
       handler = new Handler();
       animateViewPager = new Runnable() {
@@ -197,7 +196,6 @@ public class FavouritesController extends Fragment {
       mFavourites = new ArrayList<Favourites>();
       loadAdapterListener.onLoadAdapter(mFavourites, retain, mSongId, mPageSongName);
     }
-
 
     public void stopAnimation(){
       if(handler != null) {

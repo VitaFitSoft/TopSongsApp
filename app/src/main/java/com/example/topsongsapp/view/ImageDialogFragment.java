@@ -68,7 +68,7 @@ public class ImageDialogFragment extends DialogFragment implements TopSongInterf
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        final String noImage = "No Image";
+        final String noImage = getString(R.string.no_image);
         final String imageMessage = getString(R.string.no_image_found);
         final String sImageUrl = getArguments().getString(ARG_IMAGEURL);
 

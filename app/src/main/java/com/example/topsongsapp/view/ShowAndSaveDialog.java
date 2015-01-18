@@ -52,9 +52,6 @@ public class ShowAndSaveDialog extends DialogFragment implements TopSongInterfac
         mByteData = getArguments().getByteArray(KEY_BLOB);
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        // Get the layout inflater
-        //   LayoutInflater inflater = getActivity().getLayoutInflater();
-
 
         final CharSequence[] choiceList = {
                 getActivity().getResources().getString(R.string.download_image),

@@ -24,7 +24,6 @@ public class ImageAlertDialog extends DialogFragment {
         return frag;
     }
 
-
     @SuppressLint("InflateParams")
     @NonNull
     @Override

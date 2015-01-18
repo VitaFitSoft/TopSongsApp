@@ -70,7 +70,7 @@ public class Favourites implements Parcelable {
 		return mLargeImageUrl;
 	}
 
-    String getThumbImageUrl() {
+    public String getThumbImageUrl() {
         return mThumbUrl;
     }
 	
@@ -109,15 +109,6 @@ public class Favourites implements Parcelable {
     public void setArtist(String artist) {
         this.mArtist = artist;
     }
-
-
-
-// --Commented out by Inspection START (23/12/14 15:19):
-//	@SuppressWarnings("SameReturnValue")
-//    public static Creator<Favourites> getCreator() {
-//		return CREATOR;
-//	}
-// --Commented out by Inspection STOP (23/12/14 15:19)
 
 	@Override
 	public int hashCode() {

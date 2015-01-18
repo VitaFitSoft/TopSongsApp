@@ -20,6 +20,7 @@
     <string name="cancel">Cancel</string>
     <string name="toast_image">Toast image decription</string>
     <string name="no_image_found">The requested image is unavailable</string>
+    <string name="no_image">No Image</string>
     <string name="alert_dialog_ok">OK</string>
     <string name="image">full image display</string>
     <string name="close">Close</string>

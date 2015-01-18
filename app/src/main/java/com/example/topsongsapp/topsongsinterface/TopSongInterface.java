@@ -2,6 +2,7 @@ package com.example.topsongsapp.topsongsinterface;
 
 public interface TopSongInterface {
     public final static String ARG_POSITION = "POSITION";
+    public final static String ARG_PAGE_POSITION = "PAGEPOSITION";
     public final static String ARG_IMAGEURL = "IMAGEURL";
     public static final String KEY_POSITION = "POSITION";
     public static final String KEY_ID = "ID";

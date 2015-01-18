@@ -72,7 +72,7 @@ public class JsonHandler implements Parcelable{
      * @return listResults the SongsResults
      * @throws java.io.IOException
      */
-    private List<Songs> populateFeed(JsonReader reader) throws IOException {
+    private List<Songs> populateFeed(JsonReader reader) throws JSONException, IOException {
         List<Songs> entryList = new ArrayList<>();
         reader.beginObject();
         while( reader.hasNext() ) {
@@ -106,7 +106,7 @@ public class JsonHandler implements Parcelable{
      * @throws java.io.IOException
      */
 
-    List<Songs> parseJsonArray(JsonReader reader) throws IOException {
+    List<Songs> parseJsonArray(JsonReader reader) throws JSONException, IOException {
         Songs entryData;
         List<Songs> entryListPopulated = new ArrayList<>();
         reader.beginArray();
@@ -129,7 +129,7 @@ public class JsonHandler implements Parcelable{
      *            the {@link android.util.JsonReader} containing the observation
      * @throws java.io.IOException
      */
-    private Songs parseArrayData(JsonReader reader) throws IOException {
+    private Songs parseArrayData(JsonReader reader) throws JSONException, IOException {
       Songs songs = new Songs();
       List<Songs> imageArray;
       reader.beginObject();
@@ -188,7 +188,7 @@ public class JsonHandler implements Parcelable{
        return songs;
     }
 
-    List<Songs> parseImageArray(JsonReader reader) throws IOException {
+    List<Songs> parseImageArray(JsonReader reader) throws JSONException, IOException {
       List<Songs> imageArrayPopulated = new ArrayList<>();
       reader.beginArray();
       reader.peek();
@@ -199,7 +199,7 @@ public class JsonHandler implements Parcelable{
       return imageArrayPopulated;
     }
 
-    private Songs parseImageData(JsonReader reader) throws IOException {
+    private Songs parseImageData(JsonReader reader) throws JSONException, IOException {
       Songs image  = new Songs();
       String urlString;
 

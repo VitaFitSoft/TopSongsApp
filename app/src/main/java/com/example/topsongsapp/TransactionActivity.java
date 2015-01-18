@@ -26,20 +26,14 @@ public class TransactionActivity extends FragmentActivity implements  ShowAndSav
         FavouritesController.OnLoadAdapterListener,  FavouritesFragment.OnStopAnimationListener {
 
     private TransactionFragment getTranFragment(){
-     //   TransactionFragment trans = (TransactionFragment) getSupportFragmentManager().findFragmentByTag("trans");
-        return (TransactionFragment) getSupportFragmentManager().findFragmentByTag("trans");
-      //  return trans;
+      return (TransactionFragment) getSupportFragmentManager().findFragmentByTag("trans");
     }
 
     private Fragment getLastFragment(){
-  //    Fragment contentFragment = (Fragment) getSupportFragmentManager().findFragmentById(R.id.content_frame);
       return getSupportFragmentManager().findFragmentById(R.id.content_frame);
-
-    //    return contentFragment;
     }
 
     private FavouritesController getFavConFragment(){
-    //    FavouritesController favCon = (FavouritesController) getSupportFragmentManager().findFragmentById(R.id.content_frame);
         return (FavouritesController) getSupportFragmentManager().findFragmentById(R.id.content_frame);
     }
 
@@ -52,7 +46,6 @@ public class TransactionActivity extends FragmentActivity implements  ShowAndSav
           trans.showToast(getResources().getString(R.string.failure), -1);
       }
     }
-
 
     @Override
     public void onStopAnimation(){
