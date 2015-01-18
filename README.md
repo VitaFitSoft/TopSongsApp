@@ -24,4 +24,6 @@ Handle fragment orientation changes and retain the state of the fragment.
 
 Delete selected image. 
 
+![demoapp](https://raw.githubusercontent.com/VitaFitSoft/TopSongsApp/master/app/src/main/res/raw/demoapp.gif)
+
 
