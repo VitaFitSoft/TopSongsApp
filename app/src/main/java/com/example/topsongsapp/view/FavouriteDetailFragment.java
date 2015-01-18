@@ -94,4 +94,5 @@ public class FavouriteDetailFragment extends Fragment {
       }
       super.onDetach();
     }
+
 }

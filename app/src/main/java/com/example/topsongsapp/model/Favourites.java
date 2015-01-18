@@ -44,6 +44,7 @@ public class Favourites implements Parcelable {
         parcel.writeByteArray(getBlob());
 	}
 
+
 	public static final Creator<Favourites> CREATOR = new Creator<Favourites>() {
 		public Favourites createFromParcel(Parcel in) {
 			return new Favourites(in);

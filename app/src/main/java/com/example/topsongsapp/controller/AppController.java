@@ -34,6 +34,7 @@ public class AppController extends Application {
         return mRequestQueue;
     }
 
+
     public ImageLoader getImageLoader() {
         getRequestQueue();
         if (mImageLoader == null) {

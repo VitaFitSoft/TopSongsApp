@@ -12,3 +12,4 @@ public interface TopSongInterface {
     public static final String KEY_LARGE_IMAGE = "LARGE_IMAGE";
     public static final String KEY_THUMB_IMAGE = "THUMB_IMAGE";
 }
+

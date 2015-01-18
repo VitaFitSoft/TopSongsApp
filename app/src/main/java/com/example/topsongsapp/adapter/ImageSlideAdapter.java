@@ -27,6 +27,7 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 public class ImageSlideAdapter extends PagerAdapter {
 
+
 	private final DisplayImageOptions options;
 	private final ImageLoadingListener imageListener;
     private static final String ARG_SINGLE_FAVOURITES ="singleFavourites";

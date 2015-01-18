@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 
+
 public class SongsAdapter extends BaseAdapter {
 
     private final List<Songs> mSongItems;

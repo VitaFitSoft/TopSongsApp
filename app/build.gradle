@@ -24,7 +24,6 @@ android {
         testInstrumentationRunner "android.test.InstrumentationTestRunner"
     }
 
-
     buildTypes {
         release {
             minifyEnabled false

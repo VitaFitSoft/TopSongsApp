@@ -64,6 +64,7 @@ public class JsonHandler implements Parcelable{
         return  songObject;
     }
 
+
     /**
      * Populates Songs data with the JSON data.
      *

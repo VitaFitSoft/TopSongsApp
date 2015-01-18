@@ -36,6 +36,7 @@ public class LoadListItems extends ListFragment implements TopSongInterface, Sho
 
     }
 
+
     public void connectAndDownLoad() {
         boolean isConnected = false;
         isConnected = isConnectionAvailable(getActivity());
