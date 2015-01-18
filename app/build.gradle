@@ -93,7 +93,6 @@ robolectric {
     maxHeapSize = "1024m"
 }
 
-
 jacoco {
     toolVersion = "0.7.2.201409121644"
 }
